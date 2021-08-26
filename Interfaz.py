@@ -6,7 +6,7 @@ marco.config(background="green")
 marco.pack()
 
 entrada = Entry(marco)
-entrada.config(background="black", foreground="yellow", font = 15)
+entrada.config(background="black", foreground="white", font = 15)
 entrada.grid(columnspan=4, row=0)
 
 for i in range(1,4):
@@ -24,6 +24,8 @@ crearBoton(marco, entrada, "+", 3, 1, (N, E, S, W))
 crearBoton(marco, entrada, "-", 3, 2, (N, E, S, W))
 crearBoton(marco, entrada, "*", 3, 3, (N, E, S, W))
 crearBoton(marco, entrada, "/", 3, 4, (N, E, S, W))
-Button(marco, text = "=", command = lambda: resolver(entrada.get())).grid(column = 0, row = 5, columnspan = 4, sticky = (N, E, S, W))
+crearBoton(marco, entrada, "(", 0, 5, (N, E, S, W))
+crearBoton(marco, entrada, ")", 1, 5, (N, E, S, W))
+Button(marco, text = "=", command = lambda: resolver(entrada.get())).grid(column = 2, row = 5, columnspan = 2, sticky = (N, E, S, W))
 
 ventana.mainloop()
